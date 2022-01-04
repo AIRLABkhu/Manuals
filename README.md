@@ -35,10 +35,14 @@ realsense 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 
 
 #### Install Pyrealsense2 in your Ubuntu desktop
 
-pyrealsense2 패키지는 
-'pip install pyrealsense2' command 는 Ubuntu, macOS 에서는 제공되지 않습니다. 
+[Intel Realsense Github](https://github.com/IntelRealSense/librealsense)
 
-[링크](https://lieuzhenghong.com/how_to_install_librealsense_on_the_jetson_nx/) 를 참고하세요. 
+pyrealsense2 패키지는 
+
+'pip install pyrealsense2' command 는 Ubuntu, macOS 에서는 제공되지 않습니다. 
+macOS 에서 사용하는 것보다, Ubuntu 에서 사용하는 것이 더 쉬울 수 있습니다. 
+
+Ubuntu 에 설치를 위해서는 [링크](https://lieuzhenghong.com/how_to_install_librealsense_on_the_jetson_nx/) 를 참고해 주세요. 
 
 ```
 $ sudo apt-get install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
@@ -52,5 +56,9 @@ $ cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true
 $ sudo make uninstall && sudo make clean && sudo make -j4 && sudo make install
 $ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2
 ```
+
+이후 작성한 코드는 python3 로 실행해 주세요. 
+
+#### About Pyrealsense2
 
 
