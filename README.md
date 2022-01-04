@@ -1,1 +1,22 @@
 # Pick_and_Place
+
+이것은 경희대학교 AIR (Artificial Intelligence and Robotics) Lab 소속 [박지원 학부연구생](https://zzziito.github.io/)이 진행하고 있는 프로젝트입니다. 
+
+## Table of Contents
+
+1. realsense 를 이용한 3D Visualization
+
+
+## 프로젝트 개요 
+
+로봇팔의 원활한 Pick and Place 동작 수행을 위해서, Perception 부터 Manipulation 까지 직접 개발하는 것을 목표로 하고 있습니다. 
+
+#### Device
+
++ **Intel Realsense Depth Camera D435** : RGB-D 카메라
+
+#### Software
+
++ **PYTHON** with Opencv, Pyrealsense2
+
+### Week 1. 
