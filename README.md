@@ -63,8 +63,23 @@ $ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2
 
 #### Application Making
 
+realsense github 코드를 참고하여 작성했습니다.
+
 ![week1](https://user-images.githubusercontent.com/52185595/148065851-07799b4b-dcc8-486b-b7f2-98a89b9dde3c.gif)
 
+[week1 실행 코드](https://github.com/AIRLABkhu/Pick_and_Place/blob/main/week1.py)
+
+**기능**
+
+keyboard input
+
++ w : 3D viewer 
++ e : 2D / depth viewer
++ p : pause
++ r : reset view
++ z : toggle point scaling
++ c : toggle color source
++ s : save png
 
 
 
