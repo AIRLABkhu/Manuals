@@ -13,7 +13,7 @@
 
 #### Device
 
-+ Intel Realsense Depth Camera D435 : RGB-D 카메라
++ **Intel Realsense** Depth Camera D435 : RGB-D 카메라
 
 #### Software
 
