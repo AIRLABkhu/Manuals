@@ -29,9 +29,28 @@
 
 + Vscode 
 
-#### Week 1. OpenCV Application Using Realsense. 
+### Week 1. OpenCV Application Using Realsense. 
 
 realsense 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 변환하여 보여주는 Application 을 만드는 것이 1주차 목표입니다. 
 
+#### Install Pyrealsense2 in your Ubuntu desktop
+
+pyrealsense2 패키지는 
+'pip install pyrealsense2' command 는 Ubuntu, macOS 에서는 제공되지 않습니다. 
+
+[링크](https://lieuzhenghong.com/how_to_install_librealsense_on_the_jetson_nx/) 를 참고하세요. 
+
+'''
+sudo apt-get install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
+sudo apt-get install -y libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
+
+git clone https://github.com/IntelRealSense/librealsense.git
+cd ./librealsense
+./scripts/setup_udev_rules.sh
+mkdir build && cd build
+cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true
+sudo make uninstall && sudo make clean && sudo make -j4 && sudo make install
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2
+'''
 
 
