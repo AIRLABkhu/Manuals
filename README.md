@@ -13,7 +13,7 @@
 
 #### Device
 
-+ **Intel Realsense Depth Camera D435** : RGB-D 카메라
++ Intel Realsense Depth Camera D435 : RGB-D 카메라
 
 #### Software
 
@@ -21,10 +21,10 @@
 
 ### OS
 
-+ **Ubuntu 18.04** 
++ Ubuntu 18.04
 
 ### IDE
 
-+ **Vscode** 
++ Vscode 
 
 ### Week 1. 
