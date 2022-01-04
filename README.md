@@ -19,4 +19,12 @@
 
 + **PYTHON** with Opencv, Pyrealsense2
 
+### OS
+
++ **Ubuntu 18.04** 
+
+### IDE
+
++ **Vscode** 
+
 ### Week 1. 
