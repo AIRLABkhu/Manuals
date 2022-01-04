@@ -40,7 +40,7 @@ pyrealsense2 패키지는
 
 [링크](https://lieuzhenghong.com/how_to_install_librealsense_on_the_jetson_nx/) 를 참고하세요. 
 
-'''
+```
 sudo apt-get install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
 sudo apt-get install -y libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 
@@ -51,6 +51,6 @@ mkdir build && cd build
 cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true
 sudo make uninstall && sudo make clean && sudo make -j4 && sudo make install
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2
-'''
+```
 
 
