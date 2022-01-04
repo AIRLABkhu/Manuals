@@ -10,7 +10,8 @@
 
 ## 프로젝트 개요 
 
-로봇팔의 원활한 **Pick and Place** 동작 수행을 위해서, Perception 부터 Manipulation 까지 직접 개발하는 것을 목표로 하고 있습니다. <br/><br/>
+로봇팔의 원활한 **Pick and Place** 동작 수행을 위해서, <br/>
+Perception 부터 Manipulation 까지 직접 개발하는 것을 목표로 하고 있습니다. <br/><br/>
 *For the smooth Pick and place operation of the robot arm, we want to develop from Perception to Manipulation.*
 
 #### Device
@@ -37,9 +38,10 @@ realsense 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 
 
 [Intel Realsense Github](https://github.com/IntelRealSense/librealsense)
 
-pyrealsense2 패키지는 
+pyrealsense2 패키지는 Realsense 카메라를 Python 으로 제어할 수 있는 패키지입니다. <br/>
+본 프로젝트에서는 직접 데이터를 다루기 위해 SDK 가 아닌, wrapper 를 사용합니다. 
 
-'pip install pyrealsense2' command 는 Ubuntu, macOS 에서는 제공되지 않습니다. 
+'pip install pyrealsense2' command 는 Ubuntu, macOS 에서는 제공되지 않습니다. <br/>
 macOS 에서 사용하는 것보다, Ubuntu 에서 사용하는 것이 더 쉬울 수 있습니다. 
 
 Ubuntu 에 설치를 위해서는 [링크](https://lieuzhenghong.com/how_to_install_librealsense_on_the_jetson_nx/) 를 참고해 주세요. 
@@ -59,6 +61,10 @@ $ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2
 
 이후 작성한 코드는 python3 로 실행해 주세요. 
 
-#### About Pyrealsense2
+#### Application Making
+
+![week1](https://user-images.githubusercontent.com/52185595/148065851-07799b4b-dcc8-486b-b7f2-98a89b9dde3c.gif)
+
+
 
 
