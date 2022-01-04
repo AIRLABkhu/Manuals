@@ -31,4 +31,7 @@
 
 #### Week 1. OpenCV Application Using Realsense. 
 
+realsense 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 변환하여 보여주는 Application 을 만드는 것이 1주차 목표입니다. 
+
+
 
