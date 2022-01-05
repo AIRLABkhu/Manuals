@@ -14,11 +14,11 @@
 Perception 부터 Manipulation 까지 직접 개발하는 것을 목표로 하고 있습니다. <br/><br/>
 *For the smooth Pick and place operation of the robot arm, we want to develop from Perception to Manipulation.*
 
-#### Device
+### Device
 
 + **Intel Realsense** Depth Camera D435 : RGB-D 카메라
 
-#### Software
+### Software
 
 + **PYTHON** with Opencv, Pyrealsense2
 
@@ -81,5 +81,24 @@ keyboard input
 + c : toggle color source
 + s : save png
 
+**Project 함수**
+
+Pyrealsense 에서는 3D Point Cloud 를 표현하기 위해 Open3D 등의 라이브러리를 사용하는 대신, project 라는 함수를 사용합니다. <br/>
+이 함수는 numpy 를 이용해 3d vector array 를 2d 로 표현합니다. <br/>
+
+
+
+
+### Troubleshooting
+
+1. Pipeline 오류
+
+```
+AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
+```
+
+
+다음과 같은 에러 메시지가 뜰 때는 __init__.py 파일을 site_packages/pyrealsense2 폴더 내에 위치시키면 해결할 수 있습니다. 
+[참고](https://github.com/IntelRealSense/librealsense/issues/6820)
 
 
