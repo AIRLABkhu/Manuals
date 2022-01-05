@@ -86,6 +86,10 @@ keyboard input
 Pyrealsense 에서는 3D Point Cloud 를 표현하기 위해 Open3D 등의 라이브러리를 사용하는 대신, project 라는 함수를 사용합니다. <br/>
 이 함수는 numpy 를 이용해 3d vector array 를 2d 로 표현합니다. <br/>
 
+**Painter's Algorithm**
+
+Point Cloud 함수에서는 point cloud 를 painter's algorithm 에 근거하여 표시합니다. 
+painter's algorithm 은 먼 곳의 point 부터 먼저 표시하는 것을 의미합니다. 
 
 
 
