@@ -98,7 +98,7 @@ AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
 ```
 
 
-다음과 같은 에러 메시지가 뜰 때는 ____init____.py 파일을 site_packages/pyrealsense2 폴더 내에 위치시키면 해결할 수 있습니다. 
+다음과 같은 에러 메시지가 뜰 때는 \__init__\.py 파일을 site_packages/pyrealsense2 폴더 내에 위치시키면 해결할 수 있습니다. 
 [참고](https://github.com/IntelRealSense/librealsense/issues/6820)
 
 
