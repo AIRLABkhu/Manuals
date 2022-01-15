@@ -93,6 +93,11 @@ painter's algorithm 은 먼 곳의 point 부터 먼저 표시하는 것을 의�
 
 
 
+### Week 2. OpenCV Application Using Kinect. 
+
+Azure Kinect 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 변환하여 보여주는 Application 을 만드는 것이 1주차 목표입니다. 
+
+
 ### Troubleshooting
 
 1. Pipeline 오류
@@ -104,5 +109,53 @@ AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
 
 다음과 같은 에러 메시지가 뜰 때는 \__init__\.py 파일을 site_packages/pyrealsense2 폴더 내에 위치시키면 해결할 수 있습니다. 
 [참고](https://github.com/IntelRealSense/librealsense/issues/6820)
+
+
+#### 2. Azure Kinect 를 사용할 때 맞닥뜨리게 되는 여러가지 에러들
+
+Kinect 를 Ubuntu 환경에서 사용하도록 세팅하는 작업은 복잡하고 번거로워서 여러 날이 걸릴 수 있습니다. 차근차근 에러를 해결해 나가 보아요. 
+
+**a. Cannot Connect to device**
+
+일단 depth camera 를 disable 시키고 color camera 만 enable 시켜서 열어보세요. 
+열리나요? 
+
+그렇다면 이 문제는 컴퓨터에 depth camera 를 위한 드라이버가 설치되어 있지 않은 것이 원인일 수 있습니다. 
+Azure Kinect 는 
+
+
+**b. OpenGL Version 문제**
+
+**c. pip install open3d - cannot import open3d 문제**
+
+**d. framerate 문제**
+
+**e. sudo 문제**
+
+```
+On Ubuntu, you’ll need to set up udev rule to use the Kinect Camera without sudo. 
+```
+라는 문구를 주의 깊게 읽으세요! 
+
+Kinect 를 연결하고 Kinect SDK 도 정상적으로 열리는데도 python3 test1.py 를 실행했을 때, 
+
+```
+libusb devices are all unavailable
+k4a_plugin::k4a_device_open() failed
+runtime error: failed to connect to sensor
+```
+
+다음과 같은 에러가 뜬다면, 그것은 관리자 권한으로 실행하지 않아 kinect 가 열리지 않기 때문일 수 있습니다. 
+
+[Use Kinect without sudo](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/blob/develop/docs/usage.md#linux-device-setup)
+
+이때 
+
+```
+$ sudo python3 test1.py
+```
+
+를 했을 때 no module named... 같은 module import error 가 뜨는 이유는  sudo python3 와 python3 가 참조하는 루트가 다르기 때문입니다.
+
 
 
