@@ -125,7 +125,9 @@ AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
 
 #### Azure Kinect 를 사용할 때 맞닥뜨리게 되는 여러가지 에러들
 
-Kinect 를 Ubuntu 환경에서 사용하도록 세팅하는 작업은 복잡하고 번거로워서 여러 날이 걸릴 수 있습니다. 차근차근 에러를 해결해 나가 보아요. 
+Azure Kinect 를 Ubuntu 환경에서 사용하도록 세팅하는 작업은 복잡하고 번거로워서 여러 날이 걸릴 수 있습니다. 차근차근 에러를 해결해 나가 보아요. 
+
+<img width="480" alt="스크린샷 2022-01-16 오전 10 32 25" src="https://user-images.githubusercontent.com/52185595/149643891-82ddd9da-eb51-4a26-9566-4f95979c76e7.png">
 
 **a. Cannot Connect to device**
 
@@ -146,11 +148,31 @@ apt list --installed | grep k4a
 
 **b. OpenGL Version 문제**
 
+```
+OpenGL 4.4 not supported. Please install latest graphics drive. 
+```
+
+[OpenGL Upgrade 하는 방법](https://www.reddit.com/r/Ubuntu/comments/8tpq05/how_can_update_my_display_driver_to_opengl_33/)
+
+Azure Kinect 를 사용하려면 최소한 OpenGL 4.4 이상의 버전이 필요합니다. 버전을 확인하고 4.4 미만의 버전이라면 위의 사이트를 참고해서 OpenGL 을 업그레이드하되, 저도 늘 되는 방법은 아니었습니다. 
+더 좋은 방법이 있다면 알려주세요. 
+
 **c. pip install open3d - cannot import open3d 문제**
+
+python 3.9 환경에서 pip install open3d 를 실행했는데도 import open3d 를 했을 때 
+
+```
+no module named "Open3d" 
+```
+라는 에러가 떴다면, 3.9 미만의 버전으로 python virtualenv 를 만드는 방법을 고려해보세요. 
 
 **d. framerate 문제**
 
+아직도 depth camera 가 SDK 에서 열리지 않았나요? 
+framerate 를 30 fps 에서 5 fps 로 바꿔 보실래요? 
+
 **e. sudo 문제**
+
 
 ```
 On Ubuntu, you’ll need to set up udev rule to use the Kinect Camera without sudo. 
@@ -179,7 +201,4 @@ $ sudo python3 test1.py
 
 **e. usb 포트 문제**
 
-**f. Open3d install 문제**
-
-python 3.9 
-
+특정 usb 포트에 꽂았을 때만 kinect 가 실행되는 경우가 있었습니다. 조합을 바꿔서 여러 군데 꽂아보세요. 
