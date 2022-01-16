@@ -117,9 +117,9 @@ Azure Kinect 와 Open3d 를 사용하여 카메라 화면을 image, depth, 3D po
 
 
 ### Troubleshooting
-<br/>
+
 **Pipeline 오류**
-<br/>
+
 ```
 AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
 ```
