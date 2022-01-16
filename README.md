@@ -101,6 +101,10 @@ Azure Kinect 와 Open3d 를 사용하여 카메라 화면을 image, depth, 3D po
 
 #### Ubuntu 에서 Azure Kinect 사용 환경 세팅하기 
 
+[Install Azure Kinect SDK on Ubuntu](https://tianyusong.com/2019/11/13/how-to-install-azure-kinect-sdk-on-ubuntu-16-04/)
+
+먼저 SDK 를 먼저 설치합니다. 
+
 이 과정에서 생기는 에러를 해결하는 방법은 하단의 Troubleshooting 부분을 참고해 주세요. 
 
 
@@ -108,7 +112,7 @@ Azure Kinect 와 Open3d 를 사용하여 카메라 화면을 image, depth, 3D po
 
 ### Troubleshooting
 
-1. Pipeline 오류
+**Pipeline 오류**
 
 ```
 AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
@@ -119,7 +123,7 @@ AttributeError: module ‘pyrealsense2’ has no attribute ‘pipeline’
 [참고](https://github.com/IntelRealSense/librealsense/issues/6820)
 
 
-#### 2. Azure Kinect 를 사용할 때 맞닥뜨리게 되는 여러가지 에러들
+#### Azure Kinect 를 사용할 때 맞닥뜨리게 되는 여러가지 에러들
 
 Kinect 를 Ubuntu 환경에서 사용하도록 세팅하는 작업은 복잡하고 번거로워서 여러 날이 걸릴 수 있습니다. 차근차근 에러를 해결해 나가 보아요. 
 
@@ -129,7 +133,15 @@ Kinect 를 Ubuntu 환경에서 사용하도록 세팅하는 작업은 복잡하�
 열리나요? 
 
 그렇다면 이 문제는 컴퓨터에 depth camera 를 위한 드라이버가 설치되어 있지 않은 것이 원인일 수 있습니다. 
-Azure Kinect 는 
+Azure Kinect 는 depth camera 를 사용하기 위해서 다음 세 가지에 대한 설치를 요구합니다. 
+이 라이브러리들의 버전을 동일하게 맞추는 것이 필수적입니다. 이미 설치했다면, 
+
+```
+apt list --installed | grep k4a 
+```
+로 버전을 확인해보세요. 버전이 동일한가요?
+
+![kinect_library](https://user-images.githubusercontent.com/52185595/149643785-bcd3bef1-cfc8-4853-b6bf-3f305365451a.png)
 
 
 **b. OpenGL Version 문제**
@@ -165,5 +177,9 @@ $ sudo python3 test1.py
 
 를 했을 때 no module named... 같은 module import error 가 뜨는 이유는  sudo python3 와 python3 가 참조하는 루트가 다르기 때문입니다.
 
+**e. usb 포트 문제**
 
+**f. Open3d install 문제**
+
+python 3.9 
 
