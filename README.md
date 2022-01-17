@@ -108,7 +108,6 @@ depth camera streaming
 point cloud
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/52185595/149689730-f7b71ef8-cc50-45a4-9caa-b037df75b19d.gif)
-979c76e7.png">
 
 
 
