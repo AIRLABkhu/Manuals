@@ -99,7 +99,17 @@ Azure Kinect 와 Open3d 를 사용하여 카메라 화면을 image, depth, 3D po
 
 ![kinect](https://user-images.githubusercontent.com/52185595/149642458-b52f2c13-9610-412f-919c-ab719007ab5b.png)
 
+depth camera streaming
+
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/52185595/149646546-f291d3a3-3f6b-4513-9dd3-ff80a5205ac0.gif)
+
+
+
+point cloud
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/52185595/149689730-f7b71ef8-cc50-45a4-9caa-b037df75b19d.gif)
+979c76e7.png">
+
 
 
 
