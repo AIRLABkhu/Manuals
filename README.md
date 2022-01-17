@@ -95,7 +95,7 @@ painter's algorithm 은 먼 곳의 point 부터 먼저 표시하는 것을 의�
 
 ### Week 2. Open3d Application Using Kinect. 
 
-Azure Kinect 와 Open3d 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 변환하여 보여주는 Application 을 만드는 것이 1주차 목표입니다. 
+Azure Kinect 와 Open3d 를 사용하여 카메라 화면을 image, depth, 3D point cloud 로 변환하여 보여주는 Application 을 만드는 것이 2주차 목표입니다. 
 
 ![kinect](https://user-images.githubusercontent.com/52185595/149642458-b52f2c13-9610-412f-919c-ab719007ab5b.png)
 
