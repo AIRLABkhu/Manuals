@@ -106,7 +106,7 @@ depth camera streaming
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/52185595/149692164-698d9a87-8436-4873-836a-a17a65e58b03.gif)
 
 
-o3d.geometry.PointCloud.create_from_rgbd_image() 와
+o3d.geometry.PointCloud.create_from_rgbd_image() 와 <br/>
 o3d.visualization.draw_geometries() 를 이용하여 생성한 point cloud
 
 
