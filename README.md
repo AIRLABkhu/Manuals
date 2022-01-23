@@ -6,6 +6,8 @@
 ## Table of Contents
 
 1. realsense 를 이용한 3D Visualization
+2. Azure Kinect 를 이용한 Visualization
+3. Velodyne VLP-16 (ROS, VeloView)
 
 
 ## 프로젝트 개요 
@@ -124,6 +126,18 @@ o3d.visualization.draw_geometries() 를 이용하여 생성한 point cloud
 이 과정에서 생기는 에러를 해결하는 방법은 하단의 Troubleshooting 부분을 참고해 주세요. 
 같은 폴더 내에 default_config.json 파일이 있어야 한다는 점을 유의해 주세요. 
 
+
+### Week 3. Velodyne Test
+
+Velodyen VLP16 을 테스트해보고, 다양한 활용 방안을 생각해 보는 것이 3주차 목표입니다. 
+
+#### Veloview
+
+
+
+#### ROS Rviz
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/52185595/150643757-9e4d0a66-6d75-415f-a758-0301d5c8f113.gif)
 
 
 
