@@ -133,8 +133,10 @@ Velodyen VLP16 을 테스트해보고, 다양한 활용 방안을 생각해 보�
 
 **Setting**
 
-![IMG_8337](https://user-images.githubusercontent.com/52185595/150662760-bd5b3a03-ff5e-48b1-8d82-5309517dacf1.jpg)
+<img src = "https://user-images.githubusercontent.com/52185595/150662760-bd5b3a03-ff5e-48b1-8d82-5309517dacf1.jpg" width="600" >
 
+Velodyne Puck VLP16 을 구동하려면 패키지 구성상품 말고 추가로 110V 변압기 (돼지코) 와 ethernet 젠더가 필요합니다. 관련 내용은 
+[벨로다인 세팅](https://www.youtube.com/watch?v=Pa-q5elS_nE&ab_channel=VelodyneLidar) 을 참고하세요. 
 
 #### Veloview
 
