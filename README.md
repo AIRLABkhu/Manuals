@@ -131,6 +131,11 @@ o3d.visualization.draw_geometries() 를 이용하여 생성한 point cloud
 
 Velodyen VLP16 을 테스트해보고, 다양한 활용 방안을 생각해 보는 것이 3주차 목표입니다. 
 
+**Setting**
+
+![IMG_8337](https://user-images.githubusercontent.com/52185595/150662760-bd5b3a03-ff5e-48b1-8d82-5309517dacf1.jpg)
+
+
 #### Veloview
 
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/52185595/150662498-e5e1a72e-c9aa-4938-98e2-13fbab0eb9c1.gif)
