@@ -133,7 +133,7 @@ Velodyen VLP16 을 테스트해보고, 다양한 활용 방안을 생각해 보�
 
 #### Veloview
 
-
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/52185595/150662498-e5e1a72e-c9aa-4938-98e2-13fbab0eb9c1.gif)
 
 #### ROS Rviz
 
