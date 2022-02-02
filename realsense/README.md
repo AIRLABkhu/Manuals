@@ -37,7 +37,7 @@ realsense github 코드를 참고하여 작성했습니다.
 
 ![week1](https://user-images.githubusercontent.com/52185595/148065851-07799b4b-dcc8-486b-b7f2-98a89b9dde3c.gif)
 
-[week1 실행 코드](https://github.com/AIRLABkhu/Pick_and_Place/blob/main/week1.py)
+[week1 실행 코드](https://github.com/AIRLABkhu/Sensor-Study/blob/main/realsense/test.py)
 
 **기능**
 
