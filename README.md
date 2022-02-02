@@ -21,7 +21,7 @@
 
 ### Software
 
-+ **PYTHON** 
++ PYTHON
 
 ### OS
 
