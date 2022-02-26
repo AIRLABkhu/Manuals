@@ -49,6 +49,34 @@ from gazebo_msgs.srv import SetModelState
 
 #### Inverse Kinematics
 
+브라키오는 6축 로봇팔이지만, 이 프로젝트에서는 하단부 회전축 (j0), 중간부 (j1,j2,j3), 고정된 축 하나(j4), 그리퍼로 나누어서 다룹니다. 따라서 inverse kinematics 는 3축을 다룬다고 할 수 있겠습니다. 
+
+```python
+def go_to_j(self, j0=None, j1=None, j2=None, j3=None):
+  joint_goal = self.move_group.get_current_joint_value()
+  if j0 is not None:
+    joint_goal[0] = j0
+  if j1 is not None:
+    joint_goal[1] = j1
+  if j2 is not None:
+    joint_goal[2] = j2
+  if j3 is not None:
+    joint_goal[3] = j3
+  self.go_to_joint(joint_goal)
+  
+def go_to_joint(self, joint_targets):
+  joint_goal = self.move_group.get_current_joint_values()
+  joint_goal[0] = joint_targets[0]
+  joint_goal[1] = joint_targets[1]
+  joint_goal[2] = joint_targets[2]
+  joint_goal[3] = joint_targets[3]
+  joint_goal[4] = 1.5708
+  ret = self.move_group.go(joint_goal, wait=True)
+  self.move_group.stop()
+```
+
+
+
 #### ROS Message
 
 ```python
@@ -82,5 +110,27 @@ def reset_link(seflf, name, x, y, z):
     set_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
     resp = set_state(state_msg)
   except rospy.ServiceException, e:
-    print "Service call failed: %s" %e
+    print "Service call failed: %s" % e
+```
+
+**get_box_position**
+
+이 함수는 빨간 상자의 위치를 결과값으로 return 하는 함수입니다. 
+
+```python
+def get_box_position(self):
+  x, y, r = self.get_link_position(['unit_box_0::link'])
+  return self.transform(x,y,r)
+
+def get_link_position(self, link_names):
+  x = 0
+  y = 0
+  n = 0
+  for l in link_names:
+    ind = self.linkstate_data.name.index(l)
+    res = self.linkstate_data.pose[ind].position
+    x += res.x
+    y += res.y
+    n += 1
+  return x/n, y/n, DEFAULT_ROT
 ```
