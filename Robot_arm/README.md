@@ -17,7 +17,14 @@
 
 #### 1,2,3 Section 별로 keyboard 입력 받아서 움직이는 Gazebo Simulator 
 
+아래쪽 판자를 왼쪽에서부터 1,2,3 이라고 하여 <br>
+키보드 입력으로 (1 2) , (1 3) 등을 입력하면 1번 판자로부터 2번 판자로, 1번 판자로부터 3번 판자까지 pick and place 를 수행하는 simulator 입니다. 
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/52185595/155872869-de41b96b-9cb2-417c-86d2-3e8801ac0167.gif)
+
 #### 1,2,3 Section 별로 keyboard 입력 받아서 움직이는 Braccio Arm 
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/52185595/155873061-0f489262-2420-462e-86d9-2bef8fe288d3.gif)
 
 ### Week2
 
