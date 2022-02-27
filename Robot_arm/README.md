@@ -30,7 +30,11 @@
 
 #### xy 평면 상에서 시작점, 끝점 좌표 입력 받아서 움직이는 Gazebo Simulator
 
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/52185595/155873190-488e1548-3512-42d0-97f2-1168158cb01c.gif)
+
 #### Simulator 와 동일하게 움직이는 Braccio Arm 
+
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/52185595/155873317-11bca673-788a-4112-aba9-2e3099d3f077.gif)
 
 ##### Joint State Publisher
 
