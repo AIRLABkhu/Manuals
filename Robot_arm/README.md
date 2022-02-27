@@ -11,6 +11,24 @@
 5. Braccio 작동하기 
 
 
+## Videos
+
+### Week1 
+
+#### 1,2,3 Section 별로 keyboard 입력 받아서 움직이는 Gazebo Simulator 
+
+#### 1,2,3 Section 별로 keyboard 입력 받아서 움직이는 Braccio Arm 
+
+### Week2
+
+#### xy 평면 상에서 시작점, 끝점 좌표 입력 받아서 움직이는 Gazebo Simulator
+
+#### Simulator 와 동일하게 움직이는 Braccio Arm 
+
+##### Joint State Publisher
+
+##### Pick and Place Gazebo Simulator
+
 ### Robot Arm Trajectory Planning
 
 로봇팔의 Pick and Place 동작은 움직임 궤적 계획 (Trajectory Planning), 충돌 회피, 역기구학 모델링 (Inverse Kinamatics) 에 대한 연산을 필요로 하며 각각의 연산에 대해 다양한 알고리즘이 개발되어 사용되고 있습니다. 
