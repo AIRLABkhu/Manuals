@@ -167,3 +167,14 @@ def get_link_position(self, link_names):
     n += 1
   return x/n, y/n, DEFAULT_ROT
 ```
+
+**go_to_targets**
+
+```python
+def go_to_target(self, how):
+  x,y,r = self.get_box_position()
+  returun self.go_to_xy(x,y,r,how)
+  
+
+  
+```
