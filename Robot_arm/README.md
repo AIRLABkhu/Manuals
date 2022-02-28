@@ -91,6 +91,10 @@ from gazebo_msgs.srv import SetModelState
 
 브라키오는 6축 로봇팔이지만, 이 프로젝트에서는 하단부 회전축 (j0), 중간부 (j1,j2,j3), 고정된 축 하나(j4), 그리퍼로 나누어서 다룹니다. 따라서 inverse kinematics 는 3축을 다룬다고 할 수 있겠습니다. 
 
+<img width="535" alt="스크린샷 2022-02-28 오후 2 58 08" src="https://user-images.githubusercontent.com/52185595/155931884-564b176e-c7cd-4980-9a71-fa398cb73316.png">
+
+하단부 회전축은 j0 변수로 따로 다루고, 그리퍼는 일단은 로봇과 수직하게 놓여있는 물체만 잡는다는 가정 하에 시뮬레이션 했기 때문에 j4 축은 고정하였습니다. 또한 그리퍼는 open_gripper, close_gripper 라는 함수를 만들어서 따로 다루었습니다.
+
 ```python
 def go_to_j(self, j0=None, j1=None, j2=None, j3=None):
   joint_goal = self.move_group.get_current_joint_value()
