@@ -28,6 +28,8 @@
 
 #### xy 평면 상에서 시작점, 끝점 좌표 입력 받아서 움직이는 Gazebo Simulator
 
+키보드 입력으로 start x, start y, end x, end y 값을 받아 움직이는 시뮬레이터입니다. 
+
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/52185595/155873190-488e1548-3512-42d0-97f2-1168158cb01c.gif)
 
 #### Simulator 와 동일하게 움직이는 Braccio Arm 
@@ -36,7 +38,11 @@
 
 ##### Joint State Publisher
 
+ROS 의 Joint State Publisher 를 이용해서 Rviz 화면과 동일하게 움직이는 braccio 입니다.
+
 ![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/52185595/155873317-11bca673-788a-4112-aba9-2e3099d3f077.gif)
+
+### Week3
 
 #### 물체를 들어올려 쌓을 수 있는 Gazebo Simulator
 
