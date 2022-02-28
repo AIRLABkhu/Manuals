@@ -34,11 +34,14 @@
 
 #### Simulator 와 동일하게 움직이는 Braccio Arm 
 
-![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/52185595/155873317-11bca673-788a-4112-aba9-2e3099d3f077.gif)
+![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/52185595/155912569-702d7a64-c3b0-4719-9fe5-b43d1f7d7cc0.gif)
 
 ##### Joint State Publisher
 
-##### Pick and Place Gazebo Simulator
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/52185595/155873317-11bca673-788a-4112-aba9-2e3099d3f077.gif)
+
+#### 물체를 들어올려 쌓을 수 있는 Gazebo Simulator
+
 
 ### Robot Arm Trajectory Planning
 
