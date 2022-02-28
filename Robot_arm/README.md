@@ -4,11 +4,9 @@
 
 ## Table of Contents
 
-1. Trajectory Planning
-2. Rviz
-3. Gazebo
-4. MoveIt
-5. Braccio 작동하기 
+1. Videos 
+2. 기초적인 
+3. 코드 설명
 
 
 ## Videos
