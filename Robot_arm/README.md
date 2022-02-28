@@ -61,7 +61,8 @@ Path 는 Time scaling 을 통해 Trajectory 로 만들 수 있고, Motion Planni
 
 #### Arduino Shield
 
-![IMG_9094](https://user-images.githubusercontent.com/52185595/155917911-56c74de3-ebaf-4f1e-a0ed-ea14bd246437.jpg)
+<img src="https://user-images.githubusercontent.com/52185595/155917911-56c74de3-ebaf-4f1e-a0ed-ea14bd246437.jpg" width="300" height="300"/>
+
 
 브라키오는 다음과 같이 아두이노와 쉴드에 부착되어 있습니다. 이 아두이노가 ROS 를 사용할 수 있게 하려면, 따로 설정을 해 주어야 합니다. 
 Setup 에 관해서는 [이곳] (http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup) 을 참고해 주세요. 
