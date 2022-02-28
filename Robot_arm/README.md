@@ -56,15 +56,18 @@ Path 는 Time scaling 을 통해 Trajectory 로 만들 수 있고, Motion Planni
 로봇팔은 회전각 θ 를 제어하는 모터로 구성되고, joint 와 link 의 쌍으로 구성됩니다. 
 
 
-### MoveIt!
-
-MoveIt 은 운동 계획과 제어를 위한 도구입니다. 
-
-+ ROS MoveIt 패키지 설치
-+ URDF (Universal Robotic Description Format) 파일에 로봇팔 기구부의 joint, link, 무게중심, 재질 등을 정의하고 로봇팔 모델링하기 
-+ MoveIt Setup Assistant 프로그램을 통해 로봇팔 정보를 설정하기 
 
 ### Braccio 를 ROS 로 제어하는 방법
+
+#### Arduino Shield
+
+![IMG_9094](https://user-images.githubusercontent.com/52185595/155917911-56c74de3-ebaf-4f1e-a0ed-ea14bd246437.jpg)
+
+브라키오는 다음과 같이 아두이노와 쉴드에 부착되어 있습니다. 이 아두이노가 ROS 를 사용할 수 있게 하려면, 따로 설정을 해 주어야 합니다. 
+Setup 에 관해서는 [이곳] (http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup) 을 참고해 주세요. 
+
+
+#### Code
 
 이 부분은 코드 설명을 다룹니다. 
 
