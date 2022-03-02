@@ -68,6 +68,17 @@ Path 는 Time scaling 을 통해 Trajectory 로 만들 수 있고, Motion Planni
 Setup 에 관해서는 [이곳](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup) 을 참고해 주세요. 
 
 
+```
+Error opening serial : could not open port /dev/ttyACM0 Permission denied 
+```
+라는 에러가 떴다면 
+
+```
+$ sudo chmod 666 /dev/ttyACM0
+```
+
+를 입력하여 포트를 모든 사용자가 사용할 수 있도록 권한을 부여해 주세요. 
+
 #### Code
 
 이 부분은 코드 설명을 다룹니다. 
