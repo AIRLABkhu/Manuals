@@ -5,20 +5,12 @@
 로봇팔에 대한 전반적인 내용과, 
 Braccio 로봇팔로 수행하는 pick and place 를 다룹니다. 
 
-## Table of Contents
-
-1. Videos 
-2. 기초적인 
-3. 코드 설명
-
-
 ## 결과 동영상
 
 1. 박스를 쌓는 로봇팔
 
 [![braccio stack Youtube](https://img.youtube.com/vi/yRtQsGaJM6Y/maxresdefault.jpg)](https://youtu.be/yRtQsGaJM6Y)
 
-2. 
 
 ### Week1 
 
@@ -56,26 +48,57 @@ ROS 의 Joint State Publisher 를 이용해서 Rviz 화면과 동일하게 움�
 #### 물체를 들어올려 쌓을 수 있는 Gazebo Simulator
 
 
-### Robot Arm Trajectory Planning
 
-로봇팔의 Pick and Place 동작은 움직임 궤적 계획 (Trajectory Planning), 충돌 회피, 역기구학 모델링 (Inverse Kinamatics) 에 대한 연산을 필요로 하며 각각의 연산에 대해 다양한 알고리즘이 개발되어 사용되고 있습니다. 
+## 목차
 
-Path 는 Time scaling 을 통해 Trajectory 로 만들 수 있고, Motion Planning 은 이에 더해 장애물, 환경 등을 더 고려하는 것을 말합니다. 
+1. 로봇팔 개요<br>
+	1-1. 자주 나오는 용어 설명<br>
+    1-2. Inverse Kinematics<br>
+    1-3. MoveIt!<br>
+    1-4. Braccio Robot Arm <br>
+2. Braccio 로 pick and place 수행하기<br> 
+	2-1. 브라키오에서 ROS 를 사용할 수 있게 세팅하기<br>
+	2-2. 상자를 keyboard input 에 따라 옮기기<br>
+    2-3. 상자를 쌓기 <br>
 
-로봇팔은 회전각 θ 를 제어하는 모터로 구성되고, joint 와 link 의 쌍으로 구성됩니다. 
+### 1. 로봇팔 개요
+
+#### 1-1. 자주 나오는 용어 설명
+
+- **URDF**
+Unified Robot Description Format
+로봇 모델에 대한 정보들을 기술해 놓은 규격서. 
+
+- **MoveIt**
+매니퓰레이터를 위한 통합 라이브러리. 
+모션 플래닝을 위한 빠른 역기구학 해석, 매니퓰레이션을 위한 고급 알고리즘, 로봇 핸드 제어, 동역학, 제어기 등 다양한 기능을 제공하고 있다. 
+
+- **Forward Kinematics**
+로봇의 각 관절 각도가 주어졌을 때 말단 장치의 위치 및 자세를 구하는 것
+
+- **Inverse Kinematics**
+말단 장치의 위치와 자세가 주어졌을 때 각 관절 각도를 구하는 것. 
+
+#### 1-4. Braccio Robot Arm
+
+<img src="https://images.velog.io/images/zzziito/post/a9c5d984-5389-4d96-a58a-a5b74be6f33b/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202022-02-28%20%EC%98%A4%ED%9B%84%202.58.08.png" width="300" height="400">
+
+브라키오는 6축 로봇팔입니다. 
+
+### 2. Braccio 로 pick and place 수행하기 
 
 
+#### 2-1. 브라키오에서 ROS 를 사용할 수 있게 세팅하기
 
-### Braccio 를 ROS 로 제어하는 방법
+<img src="https://images.velog.io/images/zzziito/post/2701d48d-7aec-4247-8c0a-bd0f8e8b2df3/IMG_9094.jpg" width="300" height="300">
 
-#### Arduino Shield
+브라키오는 다음과 같이 아두이노 우노와 부착된 Shield 로 구성되어 있습니다. 
 
-<img src="https://user-images.githubusercontent.com/52185595/155917911-56c74de3-ebaf-4f1e-a0ed-ea14bd246437.jpg" width="300" height="300"/>
-
+![](https://images.velog.io/images/zzziito/post/2f776030-860c-4e47-895e-2855d9cfc9ae/HardwareArchitecture.jpeg)
 
 브라키오는 다음과 같이 아두이노와 쉴드에 부착되어 있습니다. 이 아두이노가 ROS 를 사용할 수 있게 하려면, 따로 설정을 해 주어야 합니다. 
 Setup 에 관해서는 [이곳](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup) 을 참고해 주세요. 
-
+이후 braccio/braccio_ros.ino 파일을 아두이노에 업로드해주세요. 
 
 ```
 Error opening serial : could not open port /dev/ttyACM0 Permission denied 
