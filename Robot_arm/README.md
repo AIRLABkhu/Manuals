@@ -1,6 +1,9 @@
-# Robot Arm 
+# Robot Arm
 
-로봇팔을 동작하는 방법에 대한 전반적인 내용을 다룹니다. 
+## Intro
+
+로봇팔에 대한 전반적인 내용과, 
+Braccio 로봇팔로 수행하는 pick and place 를 다룹니다. 
 
 ## Table of Contents
 
@@ -9,7 +12,13 @@
 3. 코드 설명
 
 
-## Videos
+## 결과 동영상
+
+1. 박스를 쌓는 로봇팔
+
+[![braccio stack Youtube](https://img.youtube.com/vi/yRtQsGaJM6Y/maxresdefault.jpg)](https://youtu.be/yRtQsGaJM6Y)
+
+2. 
 
 ### Week1 
 
