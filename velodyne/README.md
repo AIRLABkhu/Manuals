@@ -1,8 +1,5 @@
 # Velodyne VLP-16 3d Lidar
 
-### Week 3. Velodyne Test
-
-Velodyen VLP16 을 테스트해보고, 다양한 활용 방안을 생각해 보는 것이 3주차 목표입니다. 
 
 **Setting**
 
