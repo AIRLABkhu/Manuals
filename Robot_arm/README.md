@@ -5,14 +5,12 @@
 로봇팔에 대한 전반적인 내용과, 
 Braccio 로봇팔로 수행하는 pick and place 를 다룹니다. 
 
-## 결과 동영상
+## Videos
 
 1. 박스를 쌓는 로봇팔
 
 [![braccio stack Youtube](https://img.youtube.com/vi/yRtQsGaJM6Y/maxresdefault.jpg)](https://youtu.be/yRtQsGaJM6Y)
 
-
-### Week1 
 
 #### 1,2,3 Section 별로 keyboard 입력 받아서 움직이는 Gazebo Simulator 
 
@@ -25,7 +23,6 @@ Braccio 로봇팔로 수행하는 pick and place 를 다룹니다.
 
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/52185595/155873061-0f489262-2420-462e-86d9-2bef8fe288d3.gif)
 
-### Week2
 
 #### xy 평면 상에서 시작점, 끝점 좌표 입력 받아서 움직이는 Gazebo Simulator
 
