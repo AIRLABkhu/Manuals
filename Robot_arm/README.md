@@ -40,7 +40,6 @@ ROS 의 Joint State Publisher 를 이용해서 Rviz 화면과 동일하게 움�
 
 ![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/52185595/155873317-11bca673-788a-4112-aba9-2e3099d3f077.gif)
 
-### Week3
 
 #### 물체를 들어올려 쌓을 수 있는 Gazebo Simulator
 
