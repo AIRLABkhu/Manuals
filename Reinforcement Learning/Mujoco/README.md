@@ -16,4 +16,10 @@ conda activate mujoco</code></pre>
 </code></pre>
 
 
+# Install the Mujoco Library
 
+## Mujoco Library Download
+
+ <pre><code>https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
+</code></pre>
+이 주소에 들어가 Mujoco 
