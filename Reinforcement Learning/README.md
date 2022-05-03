@@ -2,14 +2,17 @@
 
 ## Table of Contents
 
-1. Mujoco 
-2. Isaac GYM
+Mujoco 
+Isaac GYM
 
 ### Software
-1. Python
+
+Python
 
 ### OS
+
 Ubuntu 20.04
 
 ### IDE
+
 Pycharm
