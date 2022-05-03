@@ -54,3 +54,22 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
 export PATH="$LD_LIBRARY_PATH:$PATH"
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
 </code></pre>
+
+이걸 전체 복사해서 붙여넣기 하자. 여기서 use_name은 본인의 우분투 username을 입력해야 한다.
+
+자 보통은 이러면 무조건 에러가 난다. 왜?? 대부분의 컴퓨터에 libGLEW가 없을 것이기 때문이다.
+
+이유는 두 가지다.
+
+첫 번째 이유 : Nvidia Driver와 Cuda가 없다.
+이런 경우는 검색을 해서 자신의 그래픽 카드에 맞는 Nvidia Driver와 Cuda를 설치하고 오자.
+
+두 번째 이유: Nividia Driver와 Cuda는 설치가 되었지만 libGLEW가 설치되지 않아 preload가 잡히지 않는 경우다.
+
+대부분 두 번째 이유로 MuJoCo-py가 실행되지 않을 것이다. 이때는 LibGLEW.so를 설치해주고 LD_PRELOAD에 해당 경로를 지정해주면 된다.
+
+$ sudo apt install libglew-dev libgl-dev
+
+terminal에서 위 명령어를 입력하고 LibGLEW.so를 다운 받자. 그리고
+
+$ echo LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGL.so:/usr/lib/x86_64-linux-gnu/libGLEW.so를 입력해 해당 경로를 지정해 주자.
