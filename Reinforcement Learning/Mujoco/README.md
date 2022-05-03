@@ -5,15 +5,7 @@
 
 # Install Anaconda
 
-Mujoco-py를 Anaconda virtual-env에 라이브러리로 넣을 것이기 때문에 Linux로 Anaconda를 설치한다. Anaconda 설치법은 이 글에서는 다루지 않을 것이다. (인터넷에 많이 설치법이 많이 소개되어 있고 설치법이 쉽다.) 
-
-+ Create and activate a conda environment
-<pre><code>conda create -n mujoco python=3.7
-conda activate mujoco</code></pre>
-
-+ Install PyTorch
- <pre><code>conda install -c pytorch pytorch=1.5 torchvision=0.6.1 cudatoolkit=10.2
-</code></pre>
+Mujoco-py를 Anaconda virtual-env에 라이브러리로 넣을 것이기 때문에 Linux로 Anaconda를 설치한다. 
 
 
 # Install the Mujoco Library
@@ -47,7 +39,7 @@ terminal를 켜고 mkdir/home/username/.mujoco 를 입력해 mujoco 파일을 �
 .bashrc 파일을 클릭해 들어가자 그리고 쭉 내려서
 ![image](https://user-images.githubusercontent.com/96813784/166399126-0f37ad9d-d59c-4e08-bfc1-dceae152e402.png)
 
-**conda initialize**위와 **enable programmable completion** 사이에
+**#conda initialize**위와 **#enable programmable completion** 아래 사이 빈공간에
 
 <pre><code>export LD_LIBRARY_PATH=/home/user_name/.mujoco/mujoco210/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
@@ -73,3 +65,46 @@ $ sudo apt install libglew-dev libgl-dev
 terminal에서 위 명령어를 입력하고 LibGLEW.so를 다운 받자. 그리고
 
 $ echo LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGL.so:/usr/lib/x86_64-linux-gnu/libGLEW.so를 입력해 해당 경로를 지정해 주자.
+
+## source .bashrc
+
+![image](https://user-images.githubusercontent.com/96813784/166399720-ee7c95c4-50ae-49eb-8c28-ae297ae1ab8b.png)
+
+이제 Terminal를 켜고 source .bashrc를 입력해서 저렇게 문제없으면 제대로 설치하였다. 만약 제대로 되지 않았다면 4번 과정에서 문제가 발생했을 가능성이 높으니 다시 차근차근 설치해 보길 바란다.
+
+# Install mujoco-py
+
+이제 Mujoco-py를 담으려고 만들었던 가상 환경에 들어가서 명령어를 하나하나 입력하자
+
+<pre><code>conda create --name mujoco_py python=3.8
+conda activate mujoco_py
+conda install -c pytorch pytorch=1.5 torchvision=0.6.1 cudatoolkit=10.2
+sudo apt update
+sudo apt-get install patchelf
+sudo apt-get install python3-dev build-essential libssl-dev libffi-dev libxml2-dev
+sudo apt-get install libxslt1-dev zlib1g-dev libglew1.5 libglew-dev python3-pip
+
+git clone https://github.com/openai/mujoco-py
+cd mujoco-py
+pip install -r requirements.txt
+pip install -r requirements.dev.txt
+
+pip3 install -e . --no-cache
+</code></pre>
+
+
+# Reboot your machine
+
+# Run these commands
+
+<pre><code>conda activate mujoco_py
+sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
+sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
+pip3 install -U 'mujoco-py<2.2,>=2.1'
+cd examples
+python3 setting_state.py
+</code></pre>
+
+![image](https://user-images.githubusercontent.com/96813784/166399807-ad7f5584-b91b-4e5b-8196-77f50faa62a9.png)
+
+최종적으로 이게 나온다면 Mujoco-py를 제대로 설치한 것이다. 
