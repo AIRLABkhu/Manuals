@@ -8,7 +8,7 @@
 Mujoco-py를 Anaconda virtual-env에 라이브러리로 넣을 것이기 때문에 Linux로 Anaconda를 설치한다. Anaconda 설치법은 이 글에서는 다루지 않을 것이다. (인터넷에 많이 설치법이 많이 소개되어 있고 설치법이 쉽다.) 
 
 + Create and activate a conda environment
-<pre><code>conda create -n transt python=3.7
+<pre><code>conda create -n mujoco python=3.7
 conda activate mujoco</code></pre>
 
 + Install PyTorch
