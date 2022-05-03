@@ -12,9 +12,9 @@
 
 + PYTHON
 
-### OS
+## OS
 
 + Ubuntu 18.04
-### IDE
+## IDE
 
 + Vscode 
