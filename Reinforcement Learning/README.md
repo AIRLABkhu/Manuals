@@ -1,19 +1,19 @@
-# Reinforcement Learning
+# Reinforcement Learning Manual
 
 ## Table of Contents
 
 + Mujoco 
 + Isaac Gym
 
-### Software
+## Software
 
 + Python
 + PyTorch
 
-### OS
+## OS
 
 + Ubuntu 20.04 (Note that you must use Linux especially Ubuntu OS to use mujoco and Isaac Gym simulator)
 
-### IDE
+## IDE
 
 + Pycharm
