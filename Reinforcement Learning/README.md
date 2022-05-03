@@ -3,7 +3,7 @@
 ## Table of Contents
 
 + Mujoco 
-+ Isaac GYM
++ Isaac Gym
 
 ### Software
 
@@ -11,7 +11,7 @@
 
 ### OS
 
-+ Ubuntu 20.04
++ Ubuntu 20.04 (Note that you must use Linux especially Ubuntu OS to use mujoco and Isaac Gym simulator)
 
 ### IDE
 
