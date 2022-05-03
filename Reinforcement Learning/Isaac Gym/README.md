@@ -24,5 +24,14 @@ isaacgym 파일에 들어간 후 terminal를 열고 $./create_conda_env_rlgpu.sh
 
 
 ![스크린샷, 2022-05-03 14-35-01](https://user-images.githubusercontent.com/96813784/166408601-5f65a419-dfb6-41ef-bfbf-8110e7aa246f.png)
+다시 isaacgym 파일에 들어가자. 그리고 python sub 파일에 들어간 후 거기서 terminal을 열어 아래 명령어를 입력하자
+```
+export LD_LIBRARY_PATH=/home/user_name/anaconda3/envs/rlgpu/lib
+conda activate rlgpu
+cd examples
+python joint_monkey.py
+```
+Anaconda로 Isaac Gym을 Download을 하였을 때 라이브러리가 파이썬 경로를 제대로 찾지 못하는 문제가 발생하는데 NVIDIA 에서는 export로 경로를 설정하면 문제가 해결된다고 한다. $export LD_LIBRARY_PATH=/home/user_name/anaconda3/envs/rlgpu/lib  **그대로 복사하는 게 아니라 user_name 부분은 자신의 linux computer의 user_name**
+
 ![스크린샷, 2022-05-03 14-35-38](https://user-images.githubusercontent.com/96813784/166408604-f5f489a9-f789-45c5-b8d4-97421519bf7f.png)
 ![스크린샷, 2022-05-03 14-35-49](https://user-images.githubusercontent.com/96813784/166408607-9df9b47a-a40b-4719-b264-edb7f482abb0.png)
