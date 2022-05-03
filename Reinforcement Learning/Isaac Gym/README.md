@@ -15,3 +15,14 @@ https://developer.nvidia.com/isaac-gym
 ##  create_conda_env_rlgpu.sh
 
 ![스크린샷, 2022-05-03 14-28-12](https://user-images.githubusercontent.com/96813784/166408133-6058607d-57cd-4543-abc8-09ab6ba06e8a.png)
+
+isaacgym 파일에 들어간 후 terminal를 열고 $./create_conda_env_rlgpu.sh 를 입력하고 isaacgym conda env가 구축되기를 기다리자.
+
+![스크린샷, 2022-05-03 14-31-23](https://user-images.githubusercontent.com/96813784/166408298-20c6d7fb-8505-4408-bf71-0055902a3be3.png)
+
+## Testing the installation
+
+
+![스크린샷, 2022-05-03 14-35-01](https://user-images.githubusercontent.com/96813784/166408601-5f65a419-dfb6-41ef-bfbf-8110e7aa246f.png)
+![스크린샷, 2022-05-03 14-35-38](https://user-images.githubusercontent.com/96813784/166408604-f5f489a9-f789-45c5-b8d4-97421519bf7f.png)
+![스크린샷, 2022-05-03 14-35-49](https://user-images.githubusercontent.com/96813784/166408607-9df9b47a-a40b-4719-b264-edb7f482abb0.png)
