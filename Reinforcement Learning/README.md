@@ -7,12 +7,12 @@
 
 ### Software
 
-Python
++ Python
 
 ### OS
 
-Ubuntu 20.04
++ Ubuntu 20.04
 
 ### IDE
 
-Pycharm
++ Pycharm
