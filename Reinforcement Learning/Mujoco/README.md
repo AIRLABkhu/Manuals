@@ -12,13 +12,8 @@ Mujoco-py를 Anaconda virtual-env에 라이브러리로 넣을 것이기 때문�
 conda activate mujoco</code></pre>
 
 + Install PyTorch
- <pre><code>conda install matplotlib pandas tqdm
-pip install opencv-python tb-nightly visdom scikit-image tikzplotlib gdown
-conda install cython scipy
-sudo apt-get install libturbojpeg
-pip install pycocotools jpeg4py
-pip install wget yacs
-pip install shapely==1.6.4.post2</code></pre>
+ <pre><code>conda install -c pytorch pytorch=1.5 torchvision=0.6.1 cudatoolkit=10.2
+</code></pre>
 
 
 
