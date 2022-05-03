@@ -1,7 +1,3 @@
-1. kinect
-2. realsense
-3. velodyne
-
 # Sensor_Manuals
 
 ## Table of Contents
@@ -17,13 +13,10 @@
 + **Velodyne VLP-16 Puck** : 3d Lidar
 
 ## Software
-
 + PYTHON
 
 ## OS
-
 + Ubuntu 18.04
 
 ## IDE
-
 + Vscode
