@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. ROS Rviz, Gazebo, MoveIt! 
+1. Robot_arm(ROS Rviz, Gazebo, MoveIt!)
 
 ## Device
 
