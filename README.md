@@ -6,7 +6,7 @@
 2. Azure Kinect 를 이용한 Visualization
 3. Velodyne VLP-16 (ROS, VeloView)
 4. ROS Rviz, Gazebo, MoveIt! 
-
+5. Reinforcement Learning
 ### Device
 
 + **Intel Realsense** Depth Camera D435 : RGB-D 카메라
@@ -17,11 +17,13 @@
 ### Software
 
 + PYTHON
++ PyTorch (Reinforcement Learning)
 
 ### OS
 
 + Ubuntu 18.04
-
++ Ubuntu 20.04 (Reinforcement Learning)
 ### IDE
 
 + Vscode 
++ Pycharm (Reinforcement Learning)
