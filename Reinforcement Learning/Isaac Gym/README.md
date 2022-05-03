@@ -39,4 +39,5 @@ Anaconda로 Isaac Gym을 Download을 하였을 때 라이브러리가 파이썬 
 
 ![스크린샷, 2022-05-03 14-35-49](https://user-images.githubusercontent.com/96813784/166408607-9df9b47a-a40b-4719-b264-edb7f482abb0.png)
 
+위 사진 처럼 실행이 된다면 
 
