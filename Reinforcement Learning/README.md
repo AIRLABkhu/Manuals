@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
-Mujoco 
-Isaac GYM
++ Mujoco 
++ Isaac GYM
 
 ### Software
 
