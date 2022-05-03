@@ -37,9 +37,11 @@ terminal를 켜고 mkdir/home/username/.mujoco 를 입력해 mujoco 파일을 �
 우선 파일/홈으로 들어가서
 ![image](https://user-images.githubusercontent.com/96813784/166399076-3cb9c716-0ea3-4acc-9615-789ee52e2a6f.png)
 .bashrc 파일을 클릭해 들어가자 그리고 쭉 내려서
-![image](https://user-images.githubusercontent.com/96813784/166399126-0f37ad9d-d59c-4e08-bfc1-dceae152e402.png)
+
 
 **#conda initialize**위와 **#enable programmable completion** 아래 사이 빈공간에
+
+![스크린샷, 2022-05-03 12-06-31](https://user-images.githubusercontent.com/96813784/166400269-d64a739d-4bb2-4f4f-9f4d-03c42281e4cb.png)
 
 <pre><code>export LD_LIBRARY_PATH=/home/user_name/.mujoco/mujoco210/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
@@ -48,6 +50,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
 </code></pre>
 
 이걸 전체 복사해서 붙여넣기 하자. 여기서 use_name은 본인의 우분투 username을 입력해야 한다.
+![image](https://user-images.githubusercontent.com/96813784/166399126-0f37ad9d-d59c-4e08-bfc1-dceae152e402.png)
 
 자 보통은 이러면 무조건 에러가 난다. 왜?? 대부분의 컴퓨터에 libGLEW가 없을 것이기 때문이다.
 
