@@ -29,18 +29,21 @@ usage: main.py [-h] [--env-name ENV_NAME] [--policy POLICY] [--eval EVAL]
 #### For SAC
 
 ```
+conda activate mujoco_py
 python main.py --env-name Humanoid-v2 --alpha 0.05
 ```
 
 #### For SAC (Hard Update)
 
 ```
+conda activate mujoco_py
 python main.py --env-name Humanoid-v2 --alpha 0.05 --tau 1 --target_update_interval 1000
 ```
 
 #### For SAC (Deterministic, Hard Update)
 
 ```
+conda activate mujoco_py
 python main.py --env-name Humanoid-v2 --policy Deterministic --tau 1 --target_update_interval 1000
 ```
 
