@@ -8,6 +8,7 @@
 ### Software
 
 + Python
++ PyTorch
 
 ### OS
 
