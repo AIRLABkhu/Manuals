@@ -41,5 +41,5 @@ $export LD_LIBRARY_PATH=/home/user_name/anaconda3/envs/rlgpu/lib  **그대로 �
 
 ![스크린샷, 2022-05-03 14-35-49](https://user-images.githubusercontent.com/96813784/166408607-9df9b47a-a40b-4719-b264-edb7f482abb0.png)
 
-위 사진 처럼 실행이 된다면 
+위 사진 처럼 실행이 된다면 설치가 완료 되었다.
 
