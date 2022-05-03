@@ -29,3 +29,28 @@ conda activate mujoco</code></pre>
 terminal를 켜고 mkdir/home/username/.mujoco 를 입력해 mujoco 파일을 담을 Hidden Folder를 하나 만들자. Hidden folder가 보이지 않는 사람은 파일 홈에 들어간 후 숨긴 파일 표시를 누르면 숨겨진 .mujoco 파일을 발견할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/96813784/166398681-1bd5dc9b-1c5f-4450-af1c-182354dae1bf.png)
+
+## Extract the library to the .mujoco folder
+
+아까 다운 받았던 Mujoco 압축 파일을 .mujoco에 압축 해제하자.
+![image](https://user-images.githubusercontent.com/96813784/166398863-734143fb-8adf-42e3-8ba6-9f6cbb7d0de8.png)
+![image](https://user-images.githubusercontent.com/96813784/166398875-393418b5-d0cf-4bb6-a1a1-4b41eaa75c16.png)
+
+이렇게 압축 해제를 완료했다면 우선 첫 단계는 성공적으로 완료하였다.
+
+## Include these Lines in .bashrc file
+
+**이 부분이 MuJoCo 설치에서 제일 많이 에러가 나는 부분이고 여기에서 문제가 없으면 거의 다 설치했다고 보면 된다.**
+
+우선 파일/홈으로 들어가서
+![image](https://user-images.githubusercontent.com/96813784/166399076-3cb9c716-0ea3-4acc-9615-789ee52e2a6f.png)
+.bashrc 파일을 클릭해 들어가자 그리고 쭉 내려서
+![image](https://user-images.githubusercontent.com/96813784/166399126-0f37ad9d-d59c-4e08-bfc1-dceae152e402.png)
+
+**conda initialize**위와 **enable programmable completion** 사이에
+
+<pre><code>export LD_LIBRARY_PATH=/home/user_name/.mujoco/mujoco210/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
+export PATH="$LD_LIBRARY_PATH:$PATH"
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
+</code></pre>
