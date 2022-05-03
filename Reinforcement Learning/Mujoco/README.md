@@ -107,4 +107,6 @@ python3 setting_state.py
 
 ![image](https://user-images.githubusercontent.com/96813784/166399807-ad7f5584-b91b-4e5b-8196-77f50faa62a9.png)
 
-최종적으로 이게 나온다면 Mujoco-py를 제대로 설치한 것이다. 
+최종적으로 이게 나온다면 Mujoco-py를 제대로 설치한 것이다
+아래는 설치법을 정리한 PDF 파일
+[mujoco_installation.pdf](https://github.com/AIRLABkhu/Manuals/files/8608089/mujoco_installation.pdf)
