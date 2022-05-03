@@ -9,8 +9,10 @@ Mujoco-py를 Anaconda virtual-env에 라이브러리로 넣을 것이기 때문�
 
 + Create and activate a conda environment
 
-<pre><code> conda create -n transt python=3.7
-conda activate transt </code></pre>
+<pre><code> 
+conda create -n transt python=3.7
+conda activate transt
+</code></pre>
 
 
 
