@@ -1,146 +1,87 @@
-<!-- 
-* KINOVA (R) KORTEX (TM)
-*
-* Copyright (c) 2018 Kinova inc. All rights reserved.
-*
-* This software may be modified and distributed 
-* under the terms of the BSD 3-Clause license. 
-*
-* Refer to the LICENSE file for details.
-*
-* -->
+# ros_kortex
+ROS Kortex is the official ROS package to interact with Kortex and its related products. It is built upon the Kortex API, documentation for which can be found in the [GitHub Kortex repository](https://github.com/Kinovarobotics/kortex).
 
-# Kortex Examples
+## Download links
 
-<!-- MarkdownTOC -->
+You can refer to the [Kortex repository "Download links" section](https://github.com/Kinovarobotics/kortex#download-links) to download the firmware package and the release notes.
 
-1. [Before running an example](#first_of_all)
-2. [Understanding the ways to use a Kortex arm with ROS](#the_ways)
-3. [Actuator configuration examples](#actuator_config)
-4. [Full arm movement examples](#full_arm)
-5. [Vision module configuration examples](#vision_config)
-6. [MoveIt! examples](#move_it)
+### Accessing the color and depth streams 
 
-<!-- /MarkdownTOC -->
+To access the color and depth streams, you will need to clone and follow the instructions to install the [ros_kortex_vision repository ](https://github.com/Kinovarobotics/ros_kortex_vision).
+## Installation
 
-<a id="first_of_all"></a>
-## Before running an example
+### Setup
 
-Before you run any example, make sure :
-- You have already built the packages using `catkin_make`.
-- You are physically connected to an arm (or you are connected over Wi-Fi) and you have started the `kortex_driver` node by following the [instructions](../kortex_driver/readme.md), or you have started the arm in simulation following the [instructions](../kortex_gazebo/readme.md).
-- The node started correctly and without errors.
+- [Robot Operating System (ROS)](http://wiki.ros.org) (middleware for robotics)
 
-<a id="the_ways"></a>
-## The ways to use a Kortex arm with ROS
+This package has been tested under ROS Kinetic (Ubuntu 16.04) and ROS Melodic (Ubuntu 18.04).
+You can find the instructions to install ROS Kinetic [here](http://wiki.ros.org/kinetic/Installation/Ubuntu) and ROS Melodic [here](http://wiki.ros.org/melodic/Installation/Ubuntu).
 
-There are a couple ways to use a Kortex arm with ROS, may it be in simulation or with a real arm.
+[Google Protocol Buffers](https://developers.google.com/protocol-buffers/) is used by Kinova to define the Kortex APIs and to automatically generate ROS messages, services and C++ classes from the Kortex API `.proto` files. The installation of Google Protocol Buffers is required by developers implementing new APIs with the robot. However, since we already provide all the necessary generated files on GitHub, this is not required for most end users of the robot.
 
-1. Using the auto-generated services and topics
+### Build
 
-    The driver auto-generates ROS services based on the C++ Kortex API, so every API call has its ROS equivalent. Some topics (not  auto-generated) are also offered for convenience. You can read more about services, topics and notifications [here](../kortex_driver/readme.md#services).
+These are the instructions to run in a terminal to create the workspace, clone the `ros_kortex` repository and install the necessary ROS dependencies:
 
-    **With a real arm**, the auto-generated wrapper translates ROS requests to Kortex API requests (Protobuf), and translated responses back to ROS structures.
+        sudo apt install python3 python3-pip
+        sudo python3 -m pip install conan
+        conan config set general.revisions_enabled=1
+        conan profile new default --detect > /dev/null
+        conan profile update settings.compiler.libcxx=libstdc++11 default
+        mkdir -p catkin_workspace/src
+        cd catkin_workspace/src
+        git clone https://github.com/Kinovarobotics/ros_kortex.git
+        cd ../
+        rosdep install --from-paths src --ignore-src -y
 
-    ![](./img/services_real_arm.png)
+Then, to build and source the workspace:
 
-    **In simulation**, the same services and topics are advertised by the kortex_driver node, but instead of translating to Kortex API and forwarding to an arm, the message either goes through on our own simulator (if the handler for the given service is implemented) or a default response is sent back and a warning printed.
+        catkin_make
+        source devel/setup.bash
 
-    ![](./img/services_sim.png)
+You can also build against one of the ARMv8 builds of the Kortex API with Conan if you specify the `CONAN_TARGET_PLATFORM` CMake argument when using `catkin_make`. The following platforms are supported:
 
-    Only a couple "core" services handlers have been implemented in simulation (mostly the ones that make the robot move and stop), namely:
-    - PlayJointTrajectory and the REACH_JOINT_ANGLES action type (to reach an angular goal)
-    - PlayCartesianTrajectory and the REACH_POSE action type (to reach a Cartesian goal)
-    - SendGripperCommand and the SEND_GRIPPER_COMMAND action type (to actuate the gripper)
-    - SendJointSpeedsCommand (for joint velocity control)
-    - ApplyEmergencyStop and Stop (to stop the robot)
-    - The Actions interface (ExecuteAction, ExecuteActionFromReference, CreateAction, DeleteAction, UpdateAction, StopAction).
+- Artik 710: 
 
-    It is also important to note that IK solutions for real arms and simulated arms may vary, as KDL is used in simulation and our own kinematics library is used in the arm's firmware.  
+        catkin_make --cmake-args -DCONAN_TARGET_PLATFORM=artik710
+        source devel/setup.bash
 
-    The simulated SendTwistCommand service has a POC implementation, we decided it is not stable enough to be activated by default. You can uncomment the kortex_arm_driver.cpp simulation handler to re-enable it and try it yourself. The same goes for the Cartesian velocity topic.
+- IMX6:
 
-    There is no plan to add more simulated services for now, but any user can write his own implementation of a Kortex ROS Service and enable the handler for it (let's say you want to simulate an Interconnect Expansion GPIO device, or a Vision device). The kortex_arm_driver.cpp file should provide all guidelines as to how to define your handler, and you are welcome to open an issue if you want more information on simulation handlers.
+        catkin_make --cmake-args -DCONAN_TARGET_PLATFORM=imx6
+        source devel/setup.bash
 
-2. Using MoveIt
+- NVidia Jetson: 
 
-    The kortex_driver offers a FollowJointTrajectory Action Server and a GripperCommand Action Server (when a gripper is used) and the MoveIt configuration files are stored for all configurations in kortex_move_it_config. This enables users to use the MoveIt Commander, or the MoveIt Python or C++ interfaces to control the arm with the motion planning framework.
-    
-    The FollowJointTrajectory Action Server pipeline is illustrated below:
+        catkin_make --cmake-args -DCONAN_TARGET_PLATFORM=jetson
+        source devel/setup.bash
 
-    ![](./img/moveit.png)
+As you see, there are instructions to install the Conan package manager. You can learn more about why we use Conan or how to simply download the API and link against it [in this specific section of the kortex_driver readme](kortex_driver/readme.md#conan). You can also decide 
 
-    **With a real arm**, the FollowJointTrajectory Action Server uses the Kortex API `ExecuteWaypointTrajectory`. This call takes as input Angular Waypoints each with their own duration. Any waypoint that yields an invalid velocity or acceleration in its segment causes the whole trajectory to be rejected. The velocity and acceleration limits in the configuration files have been tuned so no trajectory should yield such values, but if you experience trajectory rejection problems, you can tune down those parameters.
+## Contents
 
-    **In simulation**, the FollowJointTrajectory and GripperCommand Action Servers are the ones spawned by the ros_controllers used with Gazebo. The Gen3 Intel Realsense camera is not simulated.
+The following is a description of the packages included in this repository.
 
-3. Low-level control
+### kortex_control
+This package implements the simulation controllers that control the arm in Gazebo. For more details, please consult the [README](kortex_control/readme.md) from the package subdirectory.
 
-    **With a real arm**, the low-level control functions have not been added to the Kortex API wrapper because the arm absolutely needs 1kHz control, otherwise it jerks. As ROS is not really real-time friendly, we chose not to offer those functions.
+**Note** The `ros_control` controllers for the real arm are not yet implemented and will be in a future release of `ros_kortex`.
 
-    **In simulation**, the ros_controllers used with Gazebo can be directly controlled with their associated topics if you prefer controlling the joints directly without using the simulation handlers, but be aware that this interface is not accessible with the real arm! The code you write that way will need to be changed significantly to be used with a real arm.
+### kortex_description
+This package contains the URDF (Unified Robot Description Format), STL and configuration files for the Kortex-compatible robots. For more details, please consult the [README](kortex_description/readme.md) from the package subdirectory.
 
+### kortex_driver
+This package implements a ROS node that allows communication between a node and a Kinova Gen3 or Gen3 lite robot. For more details, please consult the [README](kortex_driver/readme.md) from the package subdirectory.
 
-<a id="actuator_config"></a>
-## Actuator configuration examples
-*Examples to show how to use actuator_config ROS services to configure a given actuator.*
+### kortex_examples
+This package holds all the examples needed to understand the basics of `ros_kortex`. Most of the examples are written in both C++ and Python. Only the MoveIt! example is available exclusively in Python for now.
+A more detailed [description](kortex_examples/readme.md) can be found in the package subdirectory.
 
-The examples look for advertised services in the **my_gen3** namespace by default and configures the first actuator.
+### kortex_gazebo
+This package contains files to simulate the Kinova Gen3 and Gen3 lite robots in Gazebo. For more details, please consult the [README](kortex_gazebo/readme.md) from the package subdirectory.
 
-To run the C++ example: `roslaunch kortex_examples actuator_config_cpp.launch`
+### kortex_move_it_config
+This metapackage contains the auto-generated MoveIt! files to use the Kinova Gen3 and Gen3 lite arms with the MoveIt! motion planning framework. For more details, please consult the [README](kortex_move_it_config/readme.md) from the package subdirectory.
 
-To run the Python example: `roslaunch kortex_examples actuator_config_python.launch`
-
-If you started the `kortex_driver` node in another namespace (not **my_gen3**) or if you want to test the example on another actuator than the first one, you will have to supply node parameters in the command line (the syntax doesn't change if you run the C++ or Python example): 
-
-`roslaunch kortex_examples actuator_config_cpp.launch robot_name:=<your_robot_name> device_id:=<your_device_id>`
-
-<a id="full_arm"></a>
-## Full arm examples
-*Examples to show how to use the base ROS services to move and configure the arm.*
-
-The examples look for advertised services in the **my_gen3** namespace by default.
-
-- **Simple movement example**:
-
-    - To run the C++ example: `roslaunch kortex_examples full_arm_movement_cpp.launch`
-    - To run the Python example: `roslaunch kortex_examples full_arm_movement_python.launch`
-    
-    If you started the `kortex_driver` node in another namespace (not **my_gen3**), you will have to supply the node a parameter in the command line (the syntax doesn't change if you run the C++ or Python example) : 
-    
-    `roslaunch kortex_examples full_arm_movement_cpp.launch robot_name:=<your_robot_name>`
-
-- **Cartesian poses with notifications**:
-
-    - To run the C++ example: `roslaunch kortex_examples cartesian_poses_with_notifications_cpp.launch`
-    - To run the Python example: `roslaunch kortex_examples cartesian_poses_with_notifications_python.launch`
-    
-    If you started the `kortex_driver` node in another namespace (not **my_gen3**), you will have to supply the node a parameter in the command line (the syntax doesn't change if you run the C++ or Python example) : 
-    
-    `roslaunch kortex_examples cartesian_poses_with_notifications_cpp.launch robot_name:=<your_robot_name>`
-
-<a id="vision_config"></a>
-## Vision module configuration examples
-*Examples to show how to use the vision_config ROS services to configure the vision module.*
-
-The examples look for advertised services in the **my_gen3** namespace by default.
-
-To run the C++ example: `roslaunch kortex_examples vision_configuration_cpp.launch`
-
-To run the Python example: `roslaunch kortex_examples vision_configuration_python.launch`
-
-If you started the `kortex_driver` node in another namespace (not **my_gen3**), you will have to supply the node a parameter in the command line (the syntax doesn't change if you run the C++ or Python example) : 
-
-`roslaunch kortex_examples vision_configuration_cpp.launch robot_name:=<your_robot_name>`
-
-<a id="move_it"></a>
-## MoveIt! example
-*Example to show how to use the Python MoveIt! API to move the arm.*
-
-The example looks for advertised services and topics in the **my_gen3** namespace by default.
-
-To run the example: `roslaunch kortex_examples moveit_example.launch`
-
-If you started the `kortex_driver` node in a non-default namespace (not **my_gen3**), you will have to supply the node your own namespace in the command line : 
-
-`roslaunch kortex_examples moveit_example.launch robot_name:=<your_own_namespace>`
+### third_party
+This folder contains the third-party packages we use with the ROS Kortex packages. Currently, it consists of two packages used for the simulation of the Robotiq Gripper in Gazebo. We use [gazebo-pkgs](third_party/gazebo-pkgs/README.md) for grasping support in Gazebo and [roboticsgroup_gazebo_plugins](third_party/roboticsgroup_gazebo_plugins/README.md) to mimic joint support in Gazebo.
