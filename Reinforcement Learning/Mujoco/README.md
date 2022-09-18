@@ -101,6 +101,7 @@ pip3 install -e . --no-cache
 # Run these commands
 
 <pre><code>conda activate mujoco_py
+cd mujoco-py
 sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
 sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
 pip3 install -U 'mujoco-py<2.2,>=2.1'
