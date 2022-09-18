@@ -78,7 +78,7 @@ $ echo LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGL.so:/usr/lib/x86_64-linux-gnu/l
 # Install mujoco-py
 
 이제 Mujoco-py를 담으려고 만들었던 가상 환경에 들어가서 명령어를 하나하나 입력하자
-
+(단, 아래 코드에서 conda install -c pytorch pytorch=1.5 torchvision=0.6.1 cudatoolkit=10.2 부분은 Pytorch 홈페이지를 통해 자신의 GPU CUDA version)
 <pre><code>conda create --name mujoco_py python=3.8
 conda activate mujoco_py
 conda install -c pytorch pytorch=1.5 torchvision=0.6.1 cudatoolkit=10.2
