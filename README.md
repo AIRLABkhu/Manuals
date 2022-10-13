@@ -8,10 +8,11 @@
 
 ## Device
 
-+ **Intel Realsense** Depth Camera D435 : RGB-D 카메라
-+ **Azure Kinect** :RGB-D 카메라
++ **Intel Realsense D435** : RGB-D camera
++ **Azure Kinect** RGB-D  
 + **Velodyne VLP-16 Puck** : 3d Lidar
 + **Tinkerkit Braccio** : 6-DOF robot arm
++ **Insta 360 pro2** : 360 camera 
 
 ## Software
 
@@ -22,6 +23,8 @@
 
 + Ubuntu 18.04
 + Ubuntu 20.04 (Reinforcement Learning)
++ Window 11 
+
 ## IDE
 
 + Vscode 
