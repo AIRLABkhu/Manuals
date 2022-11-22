@@ -10,7 +10,7 @@
    ```
 #### 2. 공개키를 인증 키로 등록한다.
    ```console
-   $ cat ~/.ssh/{PRI_KEY_NAME} > ~/.ssh/authorized_keys
+   $ cat ~/.ssh/{PUB_KEY_NAME} > ~/.ssh/authorized_keys
    ```
 #### 3. 개인키를 클라이언트에 전송한다. 
    * 서버가 클라이언트로 전송하는 경우
@@ -77,9 +77,9 @@
    $ # Specify your key name. Default: ~/.ssh/id_rsa
    $ # The keys will be generated. (Public key: id_rsa, Private key: id_rsa.pub)
    ```
-#### 2. Register the key as an authorized key.
+#### 2. Register the public key as an authorized key.
    ```console
-   $ cat ~/.ssh/{PRI_KEY_NAME} > ~/.ssh/authorized_keys
+   $ cat ~/.ssh/{PUB_KEY_NAME} > ~/.ssh/authorized_keys
    ```
 #### 3. Send the private key to your client.
    * The server sends to the client.
