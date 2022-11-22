@@ -4,7 +4,7 @@
 ### SSH를 위한 RSA 보안 매뉴얼
 #### 1. Linux 서버에서 RSA 공개키-개인키 쌍을 만든다.
    ```console
-   $ ssh-keygen -m rsa -p pem
+   $ ssh-keygen -t rsa
    $ # RSA 키 이름을 지정한다. 기본값: ~/.ssh/id_rsa
    $ # 키가 만들어진다. (개인키: id_rsa, 공개키: id_rsa.pub)
    ```
@@ -73,7 +73,7 @@
 ### Manual of RSA Security for SSH
 #### 1. Generate RSA publickey-privatekey pair on your Linux server.
    ```console
-   $ ssh-keygen -m rsa -p pem
+   $ ssh-keygen -t rsa
    $ # Specify your key name. Default: ~/.ssh/id_rsa
    $ # The keys will be generated. (Public key: id_rsa, Private key: id_rsa.pub)
    ```
