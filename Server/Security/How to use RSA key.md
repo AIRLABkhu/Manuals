@@ -1,6 +1,7 @@
 ## 한국어
 ### 환경
 - Ubuntu 18.04
+- Ubuntu 22.04
 ### SSH를 위한 RSA 보안 매뉴얼
 #### 1. Linux 서버에서 RSA 공개키-개인키 쌍을 만든다.
    ```console
@@ -70,6 +71,7 @@
 ## English
 ### Environment
 - Ubuntu 18.04
+- Ubuntu 22.04
 ### Manual of RSA Security for SSH
 #### 1. Generate RSA publickey-privatekey pair on your Linux server.
    ```console
