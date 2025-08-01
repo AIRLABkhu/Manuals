@@ -1,0 +1,17 @@
+# Goal
+int32 action_type
+geometry_msgs/Pose target_pose
+
+# Action types
+int32 PLAN_ONLY = 0
+int32 EXECUTE_ONLY = 1  
+int32 PLAN_AND_EXECUTE = 2
+
+---
+# Result
+bool success
+string message
+
+---
+# Feedback
+string current_status
