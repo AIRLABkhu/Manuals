@@ -1,13 +1,13 @@
-# README
-
-| ![package video](data/video1.gif) | ![franka real video](data/franka_real.gif) |
-|----------------------------------|--------------------------------------------|
+# Franka Control Package
 
 ## 목차
-- [README](#readme)
+- [Franka Control Package](#franka-control-package)
   - [목차](#목차)
   - [Setup](#setup)
   - [Details](#details)
+
+| ![package video](data/video1.gif) | ![franka real video](data/franka_real.gif) |
+|----------------------------------|--------------------------------------------|
 
 ## Setup
 
@@ -30,9 +30,10 @@
     
 3. Install dependencies
     
-    의존하고 있는 패키지를 다운로드 합니다.
+    의존하고 있는 패키지를 설치합니다.
     
     ```bash
+    cd ~/franka_ros2_ws
     rosdep install -i --from-path src --rosdistro humble -y
     ```
     
@@ -41,7 +42,6 @@
     패키지를 빌드합니다.
     
     ```bash
-    cd ~/franka_ros2_ws
     colcon build  # --packages-select franka_control_package
     source install/setup.bash
     ```
@@ -62,7 +62,7 @@
 
     - Rviz setup
 
-        Panels > Add New Panel
+        Panels > Add New Panel > RvizVisualToolGui
 
         ![rviz1](data/Screenshot_rviz1.png)
 
